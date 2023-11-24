@@ -1,0 +1,24 @@
+<!-- barbearia_list.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Barbearias</title>
+</head>
+<body>
+    <h1>Lista de Barbearias</h1>
+    <button><a href="{% url 'barbearia_create' %}">Nova Barbearia</a></button>
+    {% for barbearia in barbearia_list %}
+        <p>
+            Nome: {{ barbearia.nome }} <br>
+            Endereço: {{ barbearia.endereco }} <br>
+            Funcionários: {{ barbearia.funcionarios }}
+        </p>
+        <button><a href="{% url 'barbearia_update' pk=barbearia.pk %}">Editar</a></button>
+        <button><a href="{% url 'barbearia_delete' pk=barbearia.pk %}">Deletar</a></button>
+
+    {% endfor %}
+
+
+</body>
+</html>

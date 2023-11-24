@@ -1,0 +1,9 @@
+<h1>Excluir barbearia</h1>
+<p>Tem certeza que deseja excluir uma barbearia <strong>{{ barbearia.nome }}</strong>?</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <button type="submit">Excluir</button>
+    <button><a href="{% url 'barbearia_list' %}">Cancelar</a></button>
+</form>

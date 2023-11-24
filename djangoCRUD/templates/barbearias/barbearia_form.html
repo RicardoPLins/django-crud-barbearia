@@ -1,0 +1,34 @@
+<!-- barbearia_form.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    {% if barbearia.pk %}
+        <title>Edição de Barbearias</title>
+        {% else %}
+        <title>Cadastro de Barbearias</title>
+        {% endif %}
+</head>
+<body>
+    <main class="container">
+        {% if barbearia.pk %}
+        <h1>Edição de Barbearias</h1>
+        {% else %}
+        <h1>Cadastro de Barbearias</h1>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form }}
+
+            {% if barbearia.pk %}
+            <button type="submit">Editar</button>
+            {% else %}
+            <button type="submit">Cadastrar</button>
+            {% endif %}
+
+        </form>
+    </main>
+</body>
+</html>
